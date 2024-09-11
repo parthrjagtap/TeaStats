@@ -19,6 +19,7 @@ const limitedQuestions = [
 
 // Function to handle option selection with limits
 const handleOptionSelect = (question, option, button) => {
+    // Only restrict selection if the question is in the limitedQuestions array
     if (limitedQuestions.includes(question) && selectedQuestions.has(question)) {
         showFloatingWarning();
         return;
@@ -28,15 +29,18 @@ const handleOptionSelect = (question, option, button) => {
     surveyData[question] = option;
     selectedQuestions.add(question);
 
-    // Disable other buttons for this question
-    document.querySelectorAll(`button[data-question="${question}"]`).forEach(btn => {
-        if (btn !== button) {
-            btn.classList.add("disabled");
-        }
-    });
+    // Disable other buttons for this question if it's a limited question
+    if (limitedQuestions.includes(question)) {
+        document.querySelectorAll(`button[data-question="${question}"]`).forEach(btn => {
+            if (btn !== button) {
+                btn.classList.add("disabled");
+            }
+        });
+    }
 
-    console.log(surveyData); // For debugging, to see what's being selected
+    console.log(surveyData); // For debugging
 };
+
 
 // Function to update Firestore based on `surveyData`
 const submitSurvey = async () => {
