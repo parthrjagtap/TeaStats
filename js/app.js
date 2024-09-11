@@ -2,7 +2,7 @@ import { db } from "./firebase.js";
 import { doc, updateDoc, increment, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
 
 // Object to store the user's selections
-const surveyData = {};
+let surveyData = {};
 const selectedQuestions = new Set(); // To store selected questions for limited ones
 
 // Questions that have a selection limit
@@ -93,6 +93,7 @@ const submitSurvey = async () => {
 
         // Reset the selections after submitting
         selectedQuestions.clear();
+        surveyData = {};
         document.querySelectorAll(".disabled").forEach(btn => btn.classList.remove("disabled"));
         document.querySelectorAll(".selected").forEach(btn => btn.classList.remove("selected"));
     } catch (error) {
