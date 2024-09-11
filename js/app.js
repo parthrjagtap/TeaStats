@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { db } from "../src/firebase.js";
+=======
+import { db } from "../src/firebase-config.js";
+>>>>>>> f8528ef2fce97e74cf93f83c5b323bfd71644c86
 import { doc, updateDoc, increment, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
 
 // Object to store the user's selections
