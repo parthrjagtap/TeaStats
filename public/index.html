@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tea Survey</title>
+    <style>
+        .disabled {
+            background-color: lightgrey;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+        #floating-warning {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: red;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+<h1>Tea Survey</h1>
+
+<!-- Question 1: What type of tea do you like? -->
+<h2>What type of tea do you like?</h2>
+<button data-question="type-stats" data-option="Green Tea">Green Tea</button>
+<button data-question="type-stats" data-option="White Tea">White Tea</button>
+<button data-question="type-stats" data-option="Oolong Tea">Oolong Tea</button>
+<button data-question="type-stats" data-option="Black Tea">Black Tea</button>
+<button data-question="type-stats" data-option="Pu'erh Tea">Pu'erh Tea</button>
+<button data-question="type-stats" data-option="Flavoured Teas">Flavoured Teas</button>
+<button data-question="type-stats" data-option="Herbal Tea">Herbal Tea</button>
+
+<!-- Question 2: How many times do you drink tea in a day? -->
+<h2>How many times do you drink tea in a day?</h2>
+<button data-question="Frequency" data-option="1">1</button>
+<button data-question="Frequency" data-option="2">2</button>
+<button data-question="Frequency" data-option="3">3</button>
+<button data-question="Frequency" data-option="4+">4+</button>
+
+<!-- Question 3: How much time do you generally infuse your tea? -->
+<h2>How much time do you generally infuse your tea?</h2>
+<button data-question="time-stats" data-option="1">1 minute</button>
+<button data-question="time-stats" data-option="2">2 minutes</button>
+<button data-question="time-stats" data-option="3+">3+ minutes</button>
+
+<!-- Question 4: What's your preferred method? -->
+<h2>What's your preferred method?</h2>
+<button data-question="method" data-option="Western">Western</button>
+<button data-question="method" data-option="Gong-Fu">Gong-Fu</button>
+<button data-question="method" data-option="Depends">Depends</button>
+
+<!-- Question 5: Do you generally wash your tea before infusing? -->
+<h2>Do you generally wash your tea before infusing?</h2>
+<button data-question="Wash" data-option="Yes">Yes</button>
+<button data-question="Wash" data-option="No">No</button>
+
+<!-- Question 6: What is the origin of your tea leaves? -->
+<h2>What is the origin of your tea leaves?</h2>
+<button data-question="Origin" data-option="Japan">Japan</button>
+<button data-question="Origin" data-option="China">China</button>
+<button data-question="Origin" data-option="India">India</button>
+<button data-question="Origin" data-option="Sri-Lanka">Sri-Lanka</button>
+<button data-question="Origin" data-option="Other">Other</button>
+
+<!-- Question 7: How much do you spend on tea? -->
+<h2>How much do you spend on tea?</h2>
+<button data-question="Amount" data-option="<50$">< 50$</button>
+<button data-question="Amount" data-option="<100$">< 100$</button>
+<button data-question="Amount" data-option="<500$">< 500$</button>
+<button data-question="Amount" data-option="500+$">500+$</button>
+
+<!-- Question 8: For how long have you been drinking tea? -->
+<h2>For how long have you been drinking tea?</h2>
+<button data-question="Length" data-option="<1 year">Less than 1 year</button>
+<button data-question="Length" data-option="1+ year">1+ years</button>
+<button data-question="Length" data-option="5+ years">5+ years</button>
+<button data-question="Length" data-option="10+ years">10+ years</button>
+<button data-question="Length" data-option="As long as I can remember">As long as I can remember</button>
+
+<!-- Question 9: Do you consider yourself an expert in tea? -->
+<h2>Do you consider yourself an expert in tea?</h2>
+<button data-question="Expertise" data-option="Yes">Yes</button>
+<button data-question="Expertise" data-option="No">No</button>
+<button data-question="Expertise" data-option="Kind of">Kind of</button>
+
+<button id="submit-btn">Submit</button>
+<div id="floating-warning">You can only select one option for this question.</div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
