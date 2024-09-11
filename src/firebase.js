@@ -1,7 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
 
-const firebaseConfig = {
+const firebase = {
     apiKey: "AIzaSyA_Ylx97NTLEloDSXGPu_cnSalbYLbSBeg",
     authDomain: "tea-stats.firebaseapp.com",
     projectId: "tea-stats",
@@ -11,7 +11,7 @@ const firebaseConfig = {
     measurementId: "G-6RLR7M7XF9"
 };
 
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebase);
 const db = getFirestore(app);
 
 export { db };
