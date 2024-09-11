@@ -66,7 +66,7 @@ const handleOptionSelect = (question, option, button) => {
 const submitSurvey = async () => {
     try {
         for (const [question, option] of Object.entries(surveyData)) {
-            const docRef = doc(db, "teaSurvey", question);
+            const docRef = doc(db, "teas", question);
 
             // If it's Question 6 (Origin), we need to handle multiple options
             if (question === "Origin") {
@@ -84,7 +84,7 @@ const submitSurvey = async () => {
         }
 
         // Increment surveyors count
-        const surveyorsRef = doc(db, "teaSurvey", "surveyors_count");
+        const surveyorsRef = doc(db, "teas", "surveyors_count");
         await updateDoc(surveyorsRef, {
             count: increment(1)
         });
